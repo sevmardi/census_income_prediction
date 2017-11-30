@@ -41,7 +41,7 @@ for index in range(len(data.columns)):
  	width = 1
 
  	plt.yticks(idexes + width * 0.5, lables)
- 	plt.savefig('hist_column' + str(index) + '.jpg', format="jpg")
+ 	plt.savefig('hist_column' + str(index) + '.pdf', format="pdf")
 
  	plt.clf()
 
