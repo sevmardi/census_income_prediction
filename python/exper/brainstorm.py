@@ -20,7 +20,7 @@ CENSUS_DATASET = (
 )
 
 # read in data
-data = pd.read_csv('../data/census-income.data', names=None)
+data = pd.read_csv('../raw_data/census-income.data', names=None)
 
 data.columns = ['AAGE', 'ACLSWKR', 'ADTIND', 'ADTOCC', 'AHGA', 'AHRSPAY',
                 'AHSCOL', 'AMARITL', 'AMJIND', 'AMJOCC', 'ARACE', 'AREORGN',
@@ -44,5 +44,21 @@ for index in range(len(data.columns)):
  	plt.savefig('hist_column' + str(index) + '.pdf', format="pdf")
 
  	plt.clf()
+
+
+#define training data and test lables
+y  = data['TARGET']
+
+#Code them as 0s and 1s  
+#for training and test data
+newy = []
+for lable in y: 
+	if label == ' 50000+.': newy.append(1)
+	else: newy.append(0)
+
+del data['TARGET']
+del data['MARSUPWT']
+
+
 
 
